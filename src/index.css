@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-main: #0B0F14;
+    --bg-card: #151A21;
+    --bg-card-hover: #1B222C;
+    --border-subtle: #242D38;
+    --text-primary: #F5F7FA;
+    --text-secondary: #9CA3AF;
+    --color-profit: #22C55E;
+    --color-loss: #EF4444;
+    --color-accent: #3B82F6;
+  }
+
+  body {
+    background-color: #0B0F14;
+    color: #F5F7FA;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  #root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    max-width: 100%;
+    text-align: left;
+    border: none;
+  }
+}
+
+/* Custom scrollbar for trading terminal aesthetic */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B0F14;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #242D38;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #374151;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Price flash animation utility */
+@keyframes flashGreen {
+  0% { background-color: rgba(34, 197, 94, 0.25); }
+  100% { background-color: transparent; }
+}
+
+@keyframes flashRed {
+  0% { background-color: rgba(239, 68, 68, 0.25); }
+  100% { background-color: transparent; }
+}
+
+.flash-up {
+  animation: flashGreen 0.8s ease-out;
+}
+
+.flash-down {
+  animation: flashRed 0.8s ease-out;
+}
